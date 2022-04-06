@@ -4,12 +4,12 @@ import "./App.css";
 import { Routes, Route, Link } from "react-router-dom";
 import { Layout, Typography, Space } from "antd";
 import {
+  HomePage,
   Navbar,
-  // Homepage,
-  // Exchanges,
-  // Cryptocurrencies,
-  // CryptoDetail,
-  // News,
+  Exchanges,
+  Cryptocurrencies,
+  CryptoDetail,
+  News,
 } from "./components";
 
 const App = () => {
@@ -22,43 +22,29 @@ const App = () => {
         <Layout>
           <div className="routes">
             <Routes>
-              <Route path="/">
-                ホームページ
-                {/* <Homepage /> */}
-              </Route>
-              <Route path="/exchanges">
-                両替
-                {/* <Exchanges /> */}
-              </Route>
-              <Route path="/cryptocurrencies">
-                暗号通貨
-                {/* <Cryptocurrencies /> */}
-              </Route>
-              <Route path="/crypto/:coninId">
-                暗号通貨詳細
-                {/* <CryptoDetail /> */}
-              </Route>
-              <Route path="/news">
-                ニュース
-                {/* <News/> */}
-              </Route>
+              <Route path="/" element={<HomePage />} />
+              <Route path="/exchanges" element={<Exchanges />} />
+              <Route path="/cryptocurrencies" element={<Cryptocurrencies />} />
+              <Route path="/crypto/:coninId" element={<CryptoDetail />} />
+              <Route path="/news" element={<News />} />
             </Routes>
           </div>
         </Layout>
-      </div>
-      <div className="footer">
-        <Typography.Title
-          level={5}
-          style={{ color: "white", textAlign: "center" }}
-        >
-          仮想通貨 <br />
-          All rights reserved
-        </Typography.Title>
-        <Space>
-          <Link to="/">ホーム</Link>
-          <Link to="/exchanges">両替</Link>
-          <Link to="/news">ニュース</Link>
-        </Space>
+
+        <div className="footer">
+          <Typography.Title
+            level={5}
+            style={{ color: "gray", textAlign: "center" }}
+          >
+            仮想通貨 <br />
+            All rights reserved
+          </Typography.Title>
+          <Space>
+            <Link to="/">ホーム</Link>
+            <Link to="/exchanges">両替</Link>
+            <Link to="/news">ニュース</Link>
+          </Space>
+        </div>
       </div>
     </div>
   );
