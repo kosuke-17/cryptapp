@@ -13,7 +13,7 @@ const Navbar = () => {
     <div className="nav-container">
       <div className="logo-container">
         {/* ロゴイメージの画像 */}
-        <Avatar src="img/blockchain.png" size="small" />
+        <Avatar src="img/blockchain.png" size="large" />
         {/* ロゴ用の文字 */}
         <Typography.Title level={2} className="logo">
           <Link to="/">cryptverse</Link>
